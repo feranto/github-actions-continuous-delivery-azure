@@ -19,8 +19,8 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: |
-        docker build . -t acrhackfestfernando4311.azurecr.io/k8sdemo:${{ github.sha }}
-        docker push acrhackfestfernando4311.azurecr.io/k8sdemo:${{ github.sha }}
+        docker build . -t acrhackfestfernando4311.azurecr.io/k8sdemo:latest
+        docker push acrhackfestfernando4311.azurecr.io/k8sdemo:latest
       
     # Set the target AKS cluster.
     - uses: Azure/aks-set-context@v1
@@ -42,6 +42,6 @@ jobs:
           deployment.yaml
           service.yaml
         images: |
-          acrhackfestfernando4311.azurecr.io/k8sdemo:${{ github.sha }}
+          acrhackfestfernando4311.azurecr.io/k8sdemo:latest
         imagepullsecrets: |
           demo-k8s-secret
