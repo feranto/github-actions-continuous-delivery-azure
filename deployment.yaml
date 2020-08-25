@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: tictac
-        image: acrhackfestfernando4311.azurecr.io/nginx:1.14.2
+        image: acrhackfestfernando4311.azurecr.io/k8sdemo:latest
         ports:
         - containerPort: 80
