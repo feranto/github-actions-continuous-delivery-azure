@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: tictac-deployment
+spec:
+  selector:
+    matchLabels:
+      app: tictac
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: tictac
+    spec:
+      containers:
+      - name: tictac
+        image: acrhackfestfernando4311.azurecr.io/nginx:1.14.2
+        ports:
+        - containerPort: 80
